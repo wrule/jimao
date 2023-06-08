@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           theme={{
             algorithm: theme.defaultAlgorithm,
             token: {
-              colorPrimary: '#00b96b',
+              colorPrimary: '#0037ff',
               borderRadius: 1,
             },
           }}>

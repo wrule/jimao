@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormInstance, Select, Space, Input } from 'antd/lib';
+import { Button, Form, FormInstance, Select, Space, Input, InputNumber } from 'antd/lib';
 import { ethers } from 'ethers';
 import { useWalletClient } from 'wagmi';
 
@@ -14,6 +14,21 @@ function AddressInput(props: { value?: string, onChange?: (value: string) => voi
     />
     <Button type="primary" onClick={() => {
       props.onChange?.(ethers.Wallet.createRandom().address);
+    }}>随机</Button>
+  </Space.Compact>;
+}
+
+export
+function AmountInput(props: { value?: number, onChange?: (value: number | null) => void }) {
+  return <Space.Compact style={{ width: '100%' }}>
+    <InputNumber
+      style={{ width: '100%' }}
+      value={props.value}
+      onChange={(value) => props.onChange?.(value)}
+      placeholder="请输入金额"
+    />
+    <Button type="primary" onClick={() => {
+
     }}>随机</Button>
   </Space.Compact>;
 }
@@ -37,6 +52,9 @@ function Sender() {
     </Form.Item>
     <Form.Item label="目标地址" name="address">
       <AddressInput />
+    </Form.Item>
+    <Form.Item label="金额" name="amount">
+      <AmountInput />
     </Form.Item>
   </Form>
 }

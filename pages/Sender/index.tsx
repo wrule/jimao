@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form, FormInstance, Select, Space, Input, InputNumber } from 'antd/lib';
 import { ethers } from 'ethers';
 import { useWalletClient } from 'wagmi';
@@ -36,25 +36,29 @@ function AmountInput(props: { value?: number, onChange?: (value: number | null) 
 export
 function Sender() {
   const formRef = React.useRef<FormInstance>(null);
+  const [type, setType] = useState<string>('ETH');
 
-  const handleRandomAddress = () => {
-    const address = ethers.Wallet.createRandom().address;
-    formRef.current?.setFieldValue('address', address);
+  useEffect(() => {
+    formRef.current?.setFieldValue('type', type);
+  }, []);
+
+  const handleTypeChange = (newType: string) => {
+    setType(newType);
   };
 
   return <Form ref={formRef} layout="vertical">
     <Form.Item label="发送类型" name="type">
-      <Select>
+      <Select onChange={handleTypeChange}>
         <Select.Option value="ETH">ETH</Select.Option>
         <Select.Option value="ERC20">Token（ERC20）</Select.Option>
-        <Select.Option value="ERC751">NFT（ERC721）</Select.Option>
+        <Select.Option value="ERC721">NFT（ERC721）</Select.Option>
       </Select>
     </Form.Item>
     <Form.Item label="目标地址" name="address">
       <AddressInput />
     </Form.Item>
-    <Form.Item label="金额" name="amount">
+    {type !== 'ERC721' && <Form.Item label="金额" name="amount">
       <AmountInput />
-    </Form.Item>
+    </Form.Item>}
   </Form>
 }

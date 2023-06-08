@@ -45,9 +45,9 @@ function Sender() {
   return <Form ref={formRef} layout="vertical">
     <Form.Item label="发送类型" name="type">
       <Select>
-        <Select value="ETH">ETH</Select>
-        <Select value="ERC751">NFT（ERC751）</Select>
-        <Select value="ERC20">Token（ERC20）</Select>
+        <Select.Option value="ETH">ETH</Select.Option>
+        <Select.Option value="ERC751">NFT（ERC721）</Select.Option>
+        <Select.Option value="ERC20">Token（ERC20）</Select.Option>
       </Select>
     </Form.Item>
     <Form.Item label="目标地址" name="address">

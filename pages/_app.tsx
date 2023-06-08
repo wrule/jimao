@@ -6,7 +6,7 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { arbitrum, goerli, mainnet, optimism, polygon } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
-import { ConfigProvider, theme } from 'antd';
+import { ConfigProvider, theme } from 'antd/lib';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [

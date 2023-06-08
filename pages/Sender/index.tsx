@@ -1,6 +1,5 @@
-import { Button, Form, FormInstance, Select, Space } from 'antd';
-import Input from 'antd/es/input/Input';
 import React from 'react';
+import { Button, Form, FormInstance, Select, Space, Input } from 'antd/lib';
 import { ethers } from 'ethers';
 import { useWalletClient } from 'wagmi';
 

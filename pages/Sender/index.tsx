@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form, FormInstance, Select, Space, Input, InputNumber } from 'antd/lib';
 import { ethers } from 'ethers';
 import { useWalletClient } from 'wagmi';
+import { NFTSelector } from '../NFTSelector';
 
 export
 function AddressInput(props: { value?: string, onChange?: (value: string) => void }) {
@@ -54,11 +55,17 @@ function Sender() {
         <Select.Option value="ERC721">NFT（ERC721）</Select.Option>
       </Select>
     </Form.Item>
+    {type === 'ERC721' && <Form.Item label="选择NFT" name="nft">
+      <NFTSelector />
+    </Form.Item>}
     <Form.Item label="目标地址" name="address">
       <AddressInput />
     </Form.Item>
     {type !== 'ERC721' && <Form.Item label="金额" name="amount">
       <AmountInput />
     </Form.Item>}
+    <Form.Item>
+      <Button type="primary">发送</Button>
+    </Form.Item>
   </Form>
 }

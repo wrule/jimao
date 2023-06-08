@@ -6,6 +6,8 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { arbitrum, goerli, mainnet, optimism, polygon } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
+import { ConfigProvider, theme } from 'antd';
+
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     mainnet,
@@ -34,7 +36,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
-        <Component {...pageProps} />
+        <ConfigProvider
+          componentSize="small"
+          theme={{
+            algorithm: theme.defaultAlgorithm,
+            token: {
+              colorPrimary: '#00b96b',
+              borderRadius: 1,
+            },
+          }}>
+          <Component {...pageProps} />
+        </ConfigProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   );

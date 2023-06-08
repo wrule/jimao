@@ -1,7 +1,8 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Button, Space } from 'antd';
+import { Button, Input, Space } from 'antd';
+import { Sender } from './Sender';
 
 const Home: NextPage = () => {
   return (
@@ -16,10 +17,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Space>
+        <div style={{ width: '480px', padding: '20px' }}>
+          <Sender />
+        </div>
+        {/* <Space>
           <Button type="primary">你好，世界</Button>
           <ConnectButton />
-        </Space>
+          <Space.Compact style={{ width: '100%' }}>
+            <Input defaultValue="Combine input and button" />
+            <Button type="primary">Submit</Button>
+          </Space.Compact>
+        </Space> */}
       </main>
 
       <footer>

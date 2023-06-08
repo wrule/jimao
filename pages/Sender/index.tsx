@@ -5,13 +5,16 @@ import { useWalletClient } from 'wagmi';
 
 export
 function AddressInput(props: { value?: string, onChange?: (value: string) => void }) {
-  return <Space.Compact>
+  return <Space.Compact style={{ width: '100%' }}>
     <Input
       value={props.value}
       onChange={(e) => props.onChange?.(e.target.value)}
       placeholder="请输入地址"
+      allowClear
     />
-    <Button type="primary">随机</Button>
+    <Button type="primary" onClick={() => {
+      props.onChange?.(ethers.Wallet.createRandom().address);
+    }}>随机</Button>
   </Space.Compact>;
 }
 

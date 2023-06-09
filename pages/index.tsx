@@ -20,14 +20,6 @@ const Home: NextPage = () => {
         <div style={{ width: '480px', padding: '20px' }}>
           <Sender />
         </div>
-        {/* <Space>
-          <Button type="primary">你好，世界</Button>
-          <ConnectButton />
-          <Space.Compact style={{ width: '100%' }}>
-            <Input defaultValue="Combine input and button" />
-            <Button type="primary">Submit</Button>
-          </Space.Compact>
-        </Space> */}
       </main>
 
       <footer>

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './index.module.scss';
-import { Sender } from '../Sender';
+import { Sender } from '../Components/Sender';
 
 export default
 function Test() {

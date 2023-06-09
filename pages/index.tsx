@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <ConnectButton />
     </Header>
     <Content className={style.content}>
-      <Sender />
+      <span>你好，世界</span>
     </Content>
     <Footer className={style.footer}>Footer</Footer>
   </Layout>;

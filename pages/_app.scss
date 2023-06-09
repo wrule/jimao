@@ -1,3 +1,5 @@
+@import './antd_override.scss';
+
 html,
 body {
   padding: 0;
@@ -13,9 +15,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.ant-select-item {
-  min-height: unset!important;
-  padding: 1px 4px!important;
 }

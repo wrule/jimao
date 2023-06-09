@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Layout } from 'antd/lib';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import style from './container.module.scss';
+import { CustomButton } from './Components/CustomButton';
 
 const { Header, Footer, Content } = Layout;
 
@@ -18,7 +19,8 @@ function Container(props: { children?: React.ReactNode }) {
     </Head>
     <Header className={style.header}>
       <span></span>
-      <ConnectButton />
+      {/* <ConnectButton /> */}
+      <CustomButton />
     </Header>
     <Content className={style.content}>
       {props.children}

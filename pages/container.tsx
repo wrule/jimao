@@ -23,6 +23,6 @@ function Container(props: { children?: React.ReactNode }) {
     <Content className={style.content}>
       {props.children}
     </Content>
-    <Footer className={style.footer}>Footer</Footer>
+    <Footer className={style.footer}>jimao</Footer>
   </Layout>;
 }

@@ -1,0 +1,28 @@
+.container {
+  background-color: rgba(0, 0, 0, 0);
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  .content {
+    margin-top: 4rem;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}

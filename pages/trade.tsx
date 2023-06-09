@@ -1,6 +1,7 @@
-import React from 'react';
+import type { NextPage } from 'next';
 
-export default
-function Trade() {
+const Trade: NextPage = () => {
   return <div>交易</div>;
-}
+};
+
+export default Trade;

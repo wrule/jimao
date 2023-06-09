@@ -1,4 +1,5 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { Button } from 'antd/lib';
 
 export const CustomButton = () => {
   return (
@@ -35,24 +36,25 @@ export const CustomButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button">
+                  <Button size="middle" onClick={openConnectModal} type="primary">
                     Connect Wallet
-                  </button>
+                  </Button>
                 );
               }
               if (chain.unsupported) {
                 return (
-                  <button onClick={openChainModal} type="button">
+                  <Button size="middle" onClick={openChainModal} type="primary">
                     Wrong network
-                  </button>
+                  </Button>
                 );
               }
               return (
                 <div style={{ display: 'flex', gap: 12 }}>
-                  <button
+                  <Button
+                    size="middle"
                     onClick={openChainModal}
                     style={{ display: 'flex', alignItems: 'center' }}
-                    type="button"
+                    type="primary"
                   >
                     {chain.hasIcon && (
                       <div
@@ -75,13 +77,13 @@ export const CustomButton = () => {
                       </div>
                     )}
                     {chain.name}
-                  </button>
-                  <button onClick={openAccountModal} type="button">
+                  </Button>
+                  <Button size="middle" onClick={openAccountModal} type="primary">
                     {account.displayName}
                     {account.displayBalance
                       ? ` (${account.displayBalance})`
                       : ''}
-                  </button>
+                  </Button>
                 </div>
               );
             })()}

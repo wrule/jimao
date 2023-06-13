@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import style from './index.module.scss';
 import axios from 'axios';
 import { Image } from 'antd';
+import { Button } from 'antd/lib';
+import { useSignMessage } from 'wagmi';
 
 export
 function NFTSelector(props: { address: string }) {
@@ -18,9 +20,16 @@ function NFTSelector(props: { address: string }) {
     updateNfts();
   }, []);
 
+  const { data, isError, isLoading, isSuccess, signMessage } = useSignMessage({
+    message: 'gm wagmi frens',
+  });
+
   return <div>
     {/* <div>NFT选择器</div>
     <div>{props.address}</div> */}
+    <Button loading={isLoading} onClick={() => signMessage()}>签名消息</Button>
+    {isSuccess && <div>Signature: {data}</div>}
+    {isError && <div>Error signing message</div>}
     <div className={style.nft_selector}>
       {ownedNfts.map((nft) => <Image
         rootClassName={style.image}

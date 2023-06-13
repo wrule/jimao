@@ -56,7 +56,7 @@ function Sender() {
       </Select>
     </Form.Item>
     {type === 'ERC721' && <Form.Item label="选择NFT" name="nft">
-      <NFTSelector />
+      <NFTSelector address="0x28dF8c4d5fc59cA685546e817772181Fb717E503" />
     </Form.Item>}
     <Form.Item label="目标地址" name="address">
       <AddressInput />

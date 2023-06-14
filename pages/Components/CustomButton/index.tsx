@@ -39,11 +39,11 @@ function CustomButton() {
               </Button>;
             }
             if (chain.unsupported) {
-              return (
-                <button onClick={openChainModal} type="button">
-                  Wrong network
-                </button>
-              );
+              return <Button
+                type="primary"
+                onClick={openChainModal}>
+                Wrong Network
+              </Button>;
             }
             return (
               <div style={{ display: 'flex', gap: 12 }}>

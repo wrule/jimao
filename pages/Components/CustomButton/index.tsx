@@ -1,6 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-export const CustomButton = () => {
+export
+function CustomButton() {
   return (
     <ConnectButton.Custom>
       {({

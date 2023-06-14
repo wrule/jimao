@@ -33,6 +33,7 @@ function CustomButton() {
           {(() => {
             if (!connected) {
               return <Button
+                size="middle"
                 type="primary"
                 onClick={openConnectModal}>
                 Connect Wallet
@@ -40,6 +41,7 @@ function CustomButton() {
             }
             if (chain.unsupported) {
               return <Button
+                size="middle"
                 type="primary"
                 onClick={openChainModal}>
                 Wrong Network
@@ -48,9 +50,10 @@ function CustomButton() {
             return (
               <Space>
                 <Button
+                  size="middle"
                   type="primary"
                   onClick={openChainModal}>
-                  {chain.hasIcon && (
+                  {/* {chain.hasIcon && (
                     <div
                       style={{
                         background: chain.iconBackground,
@@ -69,10 +72,11 @@ function CustomButton() {
                         />
                       )}
                     </div>
-                  )}
+                  )} */}
                   {chain.name}
                 </Button>
                 <Button
+                  size="middle"
                   type="primary"
                   onClick={openAccountModal}>
                   {account.displayName}

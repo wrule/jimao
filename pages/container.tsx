@@ -18,8 +18,7 @@ function Container(props: { children?: React.ReactNode }) {
       <link href="/favicon.ico" rel="icon" />
     </Head>
     <Header className={style.header}>
-      <span></span>
-      {/* <ConnectButton /> */}
+      <h1 className={style.title}>3TRC</h1>
       <CustomButton />
     </Header>
     <Content className={style.content}>

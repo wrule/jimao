@@ -14,6 +14,10 @@
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     z-index: 1;
+    .title {
+      font-size: 2.5rem;
+      color: #0037ff;
+    }
   }
   .content {
     margin-top: 4rem;

@@ -1,5 +1,6 @@
 import { Button, Space } from 'antd/lib';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import style from './index.module.scss';
 
 export
 function CustomButton() {
@@ -52,7 +53,13 @@ function CustomButton() {
                 <Button
                   size="middle"
                   type="primary"
+                  icon={chain.hasIcon ? <div
+                      className={style.chain_icon_wrapper}
+                      style={{ background: chain.iconBackground }}>
+                    <img src={chain.iconUrl} alt={chain.name ?? 'chain icon'} />
+                  </div> : null}
                   onClick={openChainModal}>
+                  {chain.hasIcon }
                   {/* {chain.hasIcon && (
                     <div
                       style={{

@@ -1,4 +1,4 @@
-import { Button } from 'antd/lib';
+import { Button, Space } from 'antd/lib';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export
@@ -46,7 +46,7 @@ function CustomButton() {
               </Button>;
             }
             return (
-              <div style={{ display: 'flex', gap: 12 }}>
+              <Space>
                 <button
                   onClick={openChainModal}
                   style={{ display: 'flex', alignItems: 'center' }}
@@ -80,7 +80,7 @@ function CustomButton() {
                   {account.displayName}
                   {account.displayBalance ? ` (${account.displayBalance})` : ''}
                 </Button>
-              </div>
+              </Space>
             );
           })()}
         </div>;

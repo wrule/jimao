@@ -47,11 +47,9 @@ function CustomButton() {
             }
             return (
               <Space>
-                <button
-                  onClick={openChainModal}
-                  style={{ display: 'flex', alignItems: 'center' }}
-                  type="button"
-                >
+                <Button
+                  type="primary"
+                  onClick={openChainModal}>
                   {chain.hasIcon && (
                     <div
                       style={{
@@ -73,7 +71,7 @@ function CustomButton() {
                     </div>
                   )}
                   {chain.name}
-                </button>
+                </Button>
                 <Button
                   type="primary"
                   onClick={openAccountModal}>

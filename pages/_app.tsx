@@ -8,6 +8,8 @@ import { publicProvider } from 'wagmi/providers/public';
 
 import { ConfigProvider, theme } from 'antd/lib';
 import Container from './container';
+import zkSyncTestnet from './chains/zkSync/zkSyncTestnet';
+import scrollTestnet from './chains/scroll/scrollTestnet';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -15,6 +17,8 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     polygon,
     optimism,
     arbitrum,
+    zkSyncTestnet,
+    scrollTestnet,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli] : []),
   ],
   [publicProvider()]

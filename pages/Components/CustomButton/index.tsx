@@ -1,3 +1,4 @@
+import { Button } from 'antd/lib';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export
@@ -31,11 +32,11 @@ function CustomButton() {
           } : { }}>
           {(() => {
             if (!connected) {
-              return (
-                <button onClick={openConnectModal} type="button">
-                  Connect Wallet
-                </button>
-              );
+              return <Button
+                type="primary"
+                onClick={openConnectModal}>
+                Connect Wallet
+              </Button>;
             }
             if (chain.unsupported) {
               return (

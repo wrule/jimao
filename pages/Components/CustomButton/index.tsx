@@ -50,38 +50,16 @@ function CustomButton() {
             }
             return (
               <Space>
-                <Button
-                  size="middle"
-                  type="primary"
-                  icon={chain.hasIcon ? <div
-                      className={style.chain_icon_wrapper}
-                      style={{ background: chain.iconBackground }}>
+                <div
+                  className={style.chain_button}
+                  style={{ background: chain.iconBackground }}
+                  onClick={openChainModal}>
+                  {chain.hasIcon ? <div
+                    className={style.chain_icon_wrapper}>
                     <img src={chain.iconUrl} alt={chain.name ?? 'chain icon'} />
                   </div> : null}
-                  onClick={openChainModal}>
-                  {chain.hasIcon }
-                  {/* {chain.hasIcon && (
-                    <div
-                      style={{
-                        background: chain.iconBackground,
-                        width: 12,
-                        height: 12,
-                        borderRadius: 999,
-                        overflow: 'hidden',
-                        marginRight: 4,
-                      }}
-                    >
-                      {chain.iconUrl && (
-                        <img
-                          alt={chain.name ?? 'Chain icon'}
-                          src={chain.iconUrl}
-                          style={{ width: 12, height: 12 }}
-                        />
-                      )}
-                    </div>
-                  )} */}
                   {chain.name}
-                </Button>
+                </div>
                 <Button
                   size="middle"
                   type="primary"

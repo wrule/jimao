@@ -10,7 +10,7 @@
   align-items: center;
   cursor: pointer;
   color: white;
-  // box-shadow: 0 2px 0 rgba(5, 95, 255, 0.1);
+  box-shadow: 0 2px 0 rgba(5, 95, 255, 0.1);
   .chain_icon_wrapper {
     width: 20px;
     height: 20px;
@@ -18,7 +18,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     img {
       width: 85%;

@@ -54,10 +54,10 @@ function CustomButton() {
                   className={style.chain_button}
                   style={{ background: chain.iconBackground }}
                   onClick={openChainModal}>
-                  {chain.hasIcon ? <div
-                    className={style.chain_icon_wrapper}>
-                    <img src={chain.iconUrl} alt={chain.name ?? 'chain icon'} />
-                  </div> : null}
+                  {chain.hasIcon ? <div className={style.chain_icon_wrapper}><img
+                    src={chain.iconUrl}
+                    alt={chain.name ?? 'chain icon'}
+                  /></div> : null}
                   {chain.name}
                 </div>
                 <Button

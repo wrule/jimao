@@ -3,21 +3,25 @@
 }
 
 .chain_button {
+  height: 32px;
+  padding: 0px 8px;
+  border-radius: 1px;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-}
-
-.chain_icon_wrapper {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 2px;
-  overflow: hidden;
-  img {
-    width: 90%;
-    height: 90%;
+  color: white;
+  .chain_icon_wrapper {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 2px;
+    img {
+      width: 85%;
+      height: 85%;
+    }
   }
 }

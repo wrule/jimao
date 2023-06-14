@@ -22,69 +22,67 @@ function CustomButton() {
           chain &&
           (!authenticationStatus ||
             authenticationStatus === 'authenticated');
-        return (
-          <div
-            aria-hidden={!ready}
-            style={!ready ? {
-              opacity: 0,
-              pointerEvents: 'none',
-              userSelect: 'none',
-            } : { }}>
-            {(() => {
-              if (!connected) {
-                return (
-                  <button onClick={openConnectModal} type="button">
-                    Connect Wallet
-                  </button>
-                );
-              }
-              if (chain.unsupported) {
-                return (
-                  <button onClick={openChainModal} type="button">
-                    Wrong network
-                  </button>
-                );
-              }
+        return <div
+          aria-hidden={!ready}
+          style={!ready ? {
+            opacity: 0,
+            pointerEvents: 'none',
+            userSelect: 'none',
+          } : { }}>
+          {(() => {
+            if (!connected) {
               return (
-                <div style={{ display: 'flex', gap: 12 }}>
-                  <button
-                    onClick={openChainModal}
-                    style={{ display: 'flex', alignItems: 'center' }}
-                    type="button"
-                  >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: 'hidden',
-                          marginRight: 4,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? 'Chain icon'}
-                            src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
-                      </div>
-                    )}
-                    {chain.name}
-                  </button>
-                  <button onClick={openAccountModal} type="button">
-                    {account.displayName}
-                    {account.displayBalance
-                      ? ` (${account.displayBalance})`
-                      : ''}
-                  </button>
-                </div>
+                <button onClick={openConnectModal} type="button">
+                  Connect Wallet
+                </button>
               );
-            })()}
-          </div>
-        );
+            }
+            if (chain.unsupported) {
+              return (
+                <button onClick={openChainModal} type="button">
+                  Wrong network
+                </button>
+              );
+            }
+            return (
+              <div style={{ display: 'flex', gap: 12 }}>
+                <button
+                  onClick={openChainModal}
+                  style={{ display: 'flex', alignItems: 'center' }}
+                  type="button"
+                >
+                  {chain.hasIcon && (
+                    <div
+                      style={{
+                        background: chain.iconBackground,
+                        width: 12,
+                        height: 12,
+                        borderRadius: 999,
+                        overflow: 'hidden',
+                        marginRight: 4,
+                      }}
+                    >
+                      {chain.iconUrl && (
+                        <img
+                          alt={chain.name ?? 'Chain icon'}
+                          src={chain.iconUrl}
+                          style={{ width: 12, height: 12 }}
+                        />
+                      )}
+                    </div>
+                  )}
+                  {chain.name}
+                </button>
+                <button onClick={openAccountModal} type="button">
+                  {account.displayName}
+                  {account.displayBalance
+                    ? ` (${account.displayBalance})`
+                    : ''}
+                </button>
+              </div>
+            );
+          })()}
+        </div>;
       }}
     </ConnectButton.Custom>
   );

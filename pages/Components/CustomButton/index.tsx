@@ -24,15 +24,12 @@ function CustomButton() {
             authenticationStatus === 'authenticated');
         return (
           <div
-            {...(!ready && {
-              'aria-hidden': true,
-              'style': {
-                opacity: 0,
-                pointerEvents: 'none',
-                userSelect: 'none',
-              },
-            })}
-          >
+            aria-hidden={!ready}
+            style={!ready ? {
+              opacity: 0,
+              pointerEvents: 'none',
+              userSelect: 'none',
+            } : { }}>
             {(() => {
               if (!connected) {
                 return (

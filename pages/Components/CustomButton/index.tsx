@@ -74,12 +74,12 @@ function CustomButton() {
                   )}
                   {chain.name}
                 </button>
-                <button onClick={openAccountModal} type="button">
+                <Button
+                  type="primary"
+                  onClick={openAccountModal}>
                   {account.displayName}
-                  {account.displayBalance
-                    ? ` (${account.displayBalance})`
-                    : ''}
-                </button>
+                  {account.displayBalance ? ` (${account.displayBalance})` : ''}
+                </Button>
               </div>
             );
           })()}

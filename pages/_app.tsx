@@ -12,15 +12,7 @@ import zkSyncTestnet from './chains/zkSync/zkSyncTestnet';
 import scrollTestnet from './chains/scroll/scrollTestnet';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [
-    mainnet,
-    polygon,
-    optimism,
-    arbitrum,
-    zkSyncTestnet,
-    scrollTestnet,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli] : []),
-  ],
+  [scrollTestnet],
   [publicProvider()]
 );
 

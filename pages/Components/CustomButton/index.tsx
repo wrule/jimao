@@ -1,6 +1,8 @@
 import { Button, Space } from 'antd/lib';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import style from './index.module.scss';
+import { useSwitchNetwork } from 'wagmi';
+import scrollTestnet from '../../chains/scroll/scrollTestnet';
 
 export
 function CustomButton() {
@@ -15,6 +17,7 @@ function CustomButton() {
         authenticationStatus,
         mounted,
       }) => {
+        const switchNetwork = useSwitchNetwork({ chainId: scrollTestnet.id });
         // Note: If your app doesn't use authentication, you
         // can remove all 'authenticationStatus' checks
         const ready = mounted && authenticationStatus !== 'loading';
@@ -44,7 +47,9 @@ function CustomButton() {
               return <Button
                 size="middle"
                 type="primary"
-                onClick={openChainModal}>
+                onClick={() => {
+                  switchNetwork.switchNetwork?.();
+                }}>
                 Wrong Network
               </Button>;
             }

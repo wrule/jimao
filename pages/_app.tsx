@@ -1,6 +1,6 @@
 import './_app.scss';
 import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit';
+import { getDefaultWallets, RainbowKitProvider, lightTheme, connectorsForWallets } from '@rainbow-me/rainbowkit';
 import type { AppProps } from 'next/app';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { arbitrum, goerli, mainnet, optimism, polygon } from 'wagmi/chains';
@@ -8,19 +8,47 @@ import { publicProvider } from 'wagmi/providers/public';
 
 import { ConfigProvider, theme } from 'antd/lib';
 import Container from './container';
-import zkSyncTestnet from './chains/zkSync/zkSyncTestnet';
 import scrollTestnet from './chains/scroll/scrollTestnet';
+
+import {
+  metaMaskWallet,
+  coinbaseWallet,
+  rainbowWallet,
+  walletConnectWallet,
+  injectedWallet,
+  okxWallet,
+  trustWallet,
+  imTokenWallet,
+} from '@rainbow-me/rainbowkit/wallets';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [scrollTestnet],
   [publicProvider()]
 );
 
-const { connectors } = getDefaultWallets({
-  appName: 'RainbowKit App',
-  projectId: 'YOUR_PROJECT_ID',
-  chains,
-});
+const appName = 'jimao';
+const projectId = '1993266';
+
+const connectors = connectorsForWallets([
+  {
+    groupName: 'Popular',
+    wallets: [
+      metaMaskWallet({ projectId, chains }),
+      coinbaseWallet({ appName, chains }),
+      rainbowWallet({ projectId, chains }),
+      walletConnectWallet({ projectId, chains }),
+      injectedWallet({ chains }),
+    ],
+  },
+  {
+    groupName: 'Recommended',
+    wallets: [
+      okxWallet({ projectId, chains }),
+      trustWallet({ projectId, chains }),
+      imTokenWallet({ projectId, chains }),
+    ],
+  },
+]);
 
 const wagmiConfig = createConfig({
   autoConnect: true,
